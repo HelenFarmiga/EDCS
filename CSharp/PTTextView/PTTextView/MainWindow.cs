@@ -5,7 +5,6 @@ using Gtk;
 public partial class MainWindow: Gtk.Window
 {	
 	private String filename;
-	private string content;
 	public MainWindow (): base (Gtk.WindowType.Toplevel)
 	{
 		Build ();
@@ -62,26 +61,6 @@ public partial class MainWindow: Gtk.Window
 	{
 		saveAs ();
 	}
-
-	protected void OnNewActionActived (object sender, EventArgs e)
-	{
-		if(content.Equals (textView.Buffer.Text)) {
-			MessageDialog messageDialog = new MessageDialog(
-				this,
-				DialogFlags.DestroyWithParent,
-				MessageType.Question,
-				ButtonsType.YesNo,
-				"Hay cambios sin guardar. ¿Quieres descartar los cambios?");
-
-				ResponseType ResponseType = (ResponseType)messageDialog.Run (); //para no tener que poner 2 veces destruir
-				messageDialog.Destroy();
-				if((ResponseType)messageDialog.Run() != ResponseType.Yes)
-				return;
-			}
-			textView.Buffer.Text = "";
-			content="";
-			filename = null;
-		}
 
 
 }

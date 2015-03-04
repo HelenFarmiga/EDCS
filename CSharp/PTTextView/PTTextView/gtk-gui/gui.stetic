@@ -8,26 +8,23 @@
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../bin/Debug/PTTextView.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="673 300">
+  <widget class="Gtk.Window" id="MainWindow" design-size="724 300">
     <action-group name="Default">
       <action id="openAction">
         <property name="Type">Action</property>
-        <property name="Label" translatable="yes">_Abrir</property>
-        <property name="ShortLabel" translatable="yes">_Abrir</property>
+        <property name="Label" translatable="yes" />
         <property name="StockId">gtk-open</property>
         <signal name="Activated" handler="OnOpenActionActivated" />
       </action>
       <action id="saveAction">
         <property name="Type">Action</property>
-        <property name="Label" translatable="yes">_Guardar</property>
-        <property name="ShortLabel" translatable="yes">_Guardar</property>
+        <property name="Label" translatable="yes" />
         <property name="StockId">gtk-save</property>
         <signal name="Activated" handler="OnSaveActionActivated" />
       </action>
       <action id="saveAsAction">
         <property name="Type">Action</property>
-        <property name="Label" translatable="yes">Guardar co_mo</property>
-        <property name="ShortLabel" translatable="yes">Guardar co_mo</property>
+        <property name="Label" translatable="yes" />
         <property name="StockId">gtk-save-as</property>
         <signal name="Activated" handler="OnSaveAsActionActivated" />
       </action>
@@ -42,15 +39,15 @@
         <property name="ShortLabel" translatable="yes">_Nuevo</property>
         <property name="StockId">gtk-new</property>
       </action>
-      <action id="NuevoAction">
-        <property name="Type">Action</property>
-        <property name="Label" translatable="yes">Nuevo</property>
-        <property name="ShortLabel" translatable="yes">Nuevo</property>
-      </action>
       <action id="GuardarAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Guardar</property>
         <property name="ShortLabel" translatable="yes">Guardar</property>
+      </action>
+      <action id="NuevoAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Nuevo</property>
+        <property name="ShortLabel" translatable="yes">Nuevo</property>
       </action>
       <action id="GuardarComoAction">
         <property name="Type">Action</property>
@@ -75,21 +72,17 @@
           <widget class="Gtk.MenuBar" id="menubar1">
             <property name="MemberName" />
             <node name="__gtksharp_110_Stetic_Editor_ActionMenuBar" type="Menubar">
+              <node type="Menuitem" action="NuevoAction" />
               <node type="Menu" action="ArchivoAction">
-                <node type="Menu" action="NuevoAction" />
                 <node type="Menuitem" action="GuardarAction" />
                 <node type="Menuitem" action="GuardarComoAction" />
                 <node type="Menuitem" action="AbrirAction" />
               </node>
-              <node type="Toolitem" action="openAction" />
-              <node type="Toolitem" action="saveAction" />
-              <node type="Menuitem" action="saveAsAction" />
             </node>
           </widget>
           <packing>
             <property name="Position">0</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
+            <property name="AutoSize">False</property>
             <property name="Fill">False</property>
           </packing>
         </child>

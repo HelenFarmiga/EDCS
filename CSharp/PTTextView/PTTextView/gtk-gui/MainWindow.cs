@@ -8,8 +8,8 @@ public partial class MainWindow
 	private global::Gtk.Action saveAsAction;
 	private global::Gtk.Action ArchivoAction;
 	private global::Gtk.Action newAction;
-	private global::Gtk.Action NuevoAction;
 	private global::Gtk.Action GuardarAction;
+	private global::Gtk.Action NuevoAction;
 	private global::Gtk.Action GuardarComoAction;
 	private global::Gtk.Action AbrirAction;
 	private global::Gtk.VBox vbox1;
@@ -24,14 +24,11 @@ public partial class MainWindow
 		// Widget MainWindow
 		this.UIManager = new global::Gtk.UIManager ();
 		global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup ("Default");
-		this.openAction = new global::Gtk.Action ("openAction", global::Mono.Unix.Catalog.GetString ("_Abrir"), null, "gtk-open");
-		this.openAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("_Abrir");
+		this.openAction = new global::Gtk.Action ("openAction", null, null, "gtk-open");
 		w1.Add (this.openAction, null);
-		this.saveAction = new global::Gtk.Action ("saveAction", global::Mono.Unix.Catalog.GetString ("_Guardar"), null, "gtk-save");
-		this.saveAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("_Guardar");
+		this.saveAction = new global::Gtk.Action ("saveAction", null, null, "gtk-save");
 		w1.Add (this.saveAction, null);
-		this.saveAsAction = new global::Gtk.Action ("saveAsAction", global::Mono.Unix.Catalog.GetString ("Guardar co_mo"), null, "gtk-save-as");
-		this.saveAsAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Guardar co_mo");
+		this.saveAsAction = new global::Gtk.Action ("saveAsAction", null, null, "gtk-save-as");
 		w1.Add (this.saveAsAction, null);
 		this.ArchivoAction = new global::Gtk.Action ("ArchivoAction", global::Mono.Unix.Catalog.GetString ("Archivo"), null, null);
 		this.ArchivoAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Archivo");
@@ -39,12 +36,12 @@ public partial class MainWindow
 		this.newAction = new global::Gtk.Action ("newAction", global::Mono.Unix.Catalog.GetString ("_Nuevo"), null, "gtk-new");
 		this.newAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("_Nuevo");
 		w1.Add (this.newAction, null);
-		this.NuevoAction = new global::Gtk.Action ("NuevoAction", global::Mono.Unix.Catalog.GetString ("Nuevo"), null, null);
-		this.NuevoAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Nuevo");
-		w1.Add (this.NuevoAction, null);
 		this.GuardarAction = new global::Gtk.Action ("GuardarAction", global::Mono.Unix.Catalog.GetString ("Guardar"), null, null);
 		this.GuardarAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Guardar");
 		w1.Add (this.GuardarAction, null);
+		this.NuevoAction = new global::Gtk.Action ("NuevoAction", global::Mono.Unix.Catalog.GetString ("Nuevo"), null, null);
+		this.NuevoAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Nuevo");
+		w1.Add (this.NuevoAction, null);
 		this.GuardarComoAction = new global::Gtk.Action ("GuardarComoAction", global::Mono.Unix.Catalog.GetString ("Guardar como"), null, null);
 		this.GuardarComoAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Guardar como");
 		w1.Add (this.GuardarComoAction, null);
@@ -61,7 +58,7 @@ public partial class MainWindow
 		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='ArchivoAction' action='ArchivoAction'><menu name='NuevoAction' action='NuevoAction'/><menuitem name='GuardarAction' action='GuardarAction'/><menuitem name='GuardarComoAction' action='GuardarComoAction'/><menuitem name='AbrirAction' action='AbrirAction'/></menu><toolitem name='openAction' action='openAction'/><toolitem name='saveAction' action='saveAction'/><menuitem name='saveAsAction' action='saveAsAction'/></menubar></ui>");
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='ArchivoAction' action='ArchivoAction'><menuitem name='GuardarAction' action='GuardarAction'/><menuitem name='NuevoAction' action='NuevoAction'/><menuitem name='GuardarComoAction' action='GuardarComoAction'/><menuitem name='AbrirAction' action='AbrirAction'/></menu></menubar></ui>");
 		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 		this.menubar1.Name = "menubar1";
 		this.vbox1.Add (this.menubar1);
@@ -95,7 +92,7 @@ public partial class MainWindow
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultWidth = 673;
+		this.DefaultWidth = 724;
 		this.DefaultHeight = 300;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
